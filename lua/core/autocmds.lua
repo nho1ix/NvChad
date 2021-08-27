@@ -14,10 +14,7 @@ vim.cmd [[ autocmd BufEnter,BufWinEnter,FileType,WinEnter * lua require("core.ut
 -- Recompile suckless programs automatically
 vim.cmd [[ autocmd BufWritePost config.h,config.def.h,*.c !sudo make install ]]
 
--- Disable mouse use on nvim
-vim.cmd [[ set mouse= ]]
-
--- Disable VimWiki tab / <S-tab> 
+-- Disable VimWiki tab / <S-tab>
 -- vim.cmd [[ au filetype vimwiki silent! iunmap <buffer> <Tab> ]]
 
 
