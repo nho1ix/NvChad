@@ -25,6 +25,17 @@ vim.cmd [[ let g:vimwiki_table_mappings=0 ]]
 -- PDF shortcut
 vim.cmd [[ nmap <leader>pdf :!pandoc % -f vimwiki -t pdf -so %.pdf && mv %.pdf ~/Downloads ]]
 
+-- Ignore tab completing these files in Vim
+vim.cmd [[ set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pdf,*.bak,*.beam ]]
+
+-- HTML shortcut
+vim.cmd [[ nmap <leader>tml :!pandoc % -f vimwiki -t html -so %.html && mv %.html ~/Downloads/gitpages/Blog_Posts/ ]]
+
+
+-- Open PDFs in Vim
+-- vim.cmd [[ au BufRead *.pdf !zathura % & ]]
+
+
 -- Disable VimWiki tab / <S-tab>
 -- vim.cmd [[ au filetype vimwiki silent! iunmap <buffer> <Tab> ]]
 
