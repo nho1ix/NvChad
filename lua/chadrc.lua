@@ -141,8 +141,8 @@ M.mappings = {
 -- to get short info about a plugin, see the respective string in plugin_status, if not present, then info here
 M.mappings.plugin = {
    bufferline = {
-      next_buffer = "<TAB>", -- next buffer
-      prev_buffer = "<S-Tab>", -- previous buffer
+      next_buffer = "<leader><TAB>", -- next buffer
+      prev_buffer = "<leader><S-Tab>", -- previous buffer
    },
    chadsheet = {
       default_keys = "<leader>dk",

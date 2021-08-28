@@ -3,12 +3,14 @@ Yours sincerely,
 
 Victor Vo
 endsnippet
+
 snippet box "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
+
 snippet mk "Math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
@@ -49,96 +51,124 @@ endsnippet
 # endsnippet
 
 snippet bold "VimWiki" wA
+%title *${1}*
+%date *${2}*
+snip.rv = ''
+`$2
+endsnippet
+
+snippet stitle "VimWiki" wA
 *${1}*`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet lsbo "VimWiki" wA
 _*${1}*_`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet itls "VimWiki" wA
 _${1}_`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet hdone "VimWiki" wA
 = ${1} =`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet hdtwo "VimWiki" wA
 == ${1} ==`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet hdtre "VimWiki" wA
 === ${1} ===`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet hdour "VimWiki" wA
 ==== ${1} ====`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet dnls "VimWiki" wA
 - [ ] ${1}`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet blt "VimWiki" wA
 *${1}`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet nmbr "VimWiki" wA
 1. ${1}`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet wklk "VimWiki" wA
 [[${1}.${2}|$1]]
 endsnippet
+
 snippet wkfile "VimWiki" wA
 [[file:${1}${2}.${3}|$2]]
 endsnippet
+
 snippet wkpdf "VimWiki" wA
 [[file:${1}${2}.pdf|$2]]
 endsnippet
+
 snippet wknew "VimWiki" wA
 [[${1}.wiki|$1]]
 endsnippet
+
 snippet psis "VimWiki" iA
 (${1})`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet fnc "VimWiki" wA
 f(x) =${1}`!p
 snip.rv = ''
 `$2
 endsnippet
+
 snippet newday "Timestamp" wA
 [[Day_$1.wiki|Day $1 - `date "+%B %d"`]]
 endsnippet
+
 snippet timesp "Timestamp"
 `date "+%B %d, %I:%M %p"`${1}
 endsnippet
+
 snippet beginday "Timestamp" wA
 = Day ${1} | `date "+%B %d"` =
 ${0}
 ${2}
 endsnippet
+
 snippet newdiary "Diary" wA
 [[diary:`date "+%B %d"`|${1}`date "+%B %d"`]]
 endsnippet
+
 snippet begindiary "Diary" wA
 = `date "+%B %d, %I:%M %p"` = 
 ${0}
 ${1}
 endsnippet
+
 snippet woneauto "MedTerm" wA
 I picked the word _*${1}*_. The word root of _*$1*_ is _*${2}-*_ and the suffix is _*-${3}*_. _*$2-*_ means ${4} and _*-$3*_ means ${5}. Therefore, _*$1*_ means ${6}. _*Glylys, B., Wedding, M.A. (2013) Medical Terminology Systems: A Body System Approach. F.A. Davis. Philadelphia. pp ${7}*_
 ${0}
@@ -146,17 +176,21 @@ endsnippet
 snippet wonesuf "MedTerm" wA
 The suffix I chose is _*-${1}*_. I combined the root word, _*${2}-*_, meaning ${3} to form the word *${4}*. The suffix _*-$1*_ means ${5}. The definition of the word *$4* is ${6}. _*Glylys, B., Wedding, M.A. (2013) Medical Terminology Systems: A Body System Approach. F.A. Davis. Philadelphia. pp ${7}*_
 endsnippet
+
 snippet mdcite "MedTerm" wA
 _*(Glylys, B., Wedding, M.A. (2013) Medical Terminology Systems: A Body System Approach. F.A. Davis. Philadelphia. pp ${1})*_
 endsnippet
+
 snippet wpre "MedTerm" wA
 The medical term I chose was _*${1}*_. The prefix for _*$1*_ was "_*${2}-*_". The term "$1" denotes a ${3}. 
 ${4}
 endsnippet
+
 snippet wawt "MedTerm" wA
 ${1}: The prefix in the term _*$1*_ is _*${2}-*_, and the definition of the term "$1" is "${3}". The definition for the prefix, "$2-" is "${4}". The medical term denotes a _${5}_.
 ${6}
 endsnippet
+
 snippet beginhw "Homework" wA
 = `date "+%B %d"` = 
 ${0}

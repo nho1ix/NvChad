@@ -14,6 +14,17 @@ vim.cmd [[ autocmd BufEnter,BufWinEnter,FileType,WinEnter * lua require("core.ut
 -- Recompile suckless programs automatically
 vim.cmd [[ autocmd BufWritePost config.h,config.def.h,*.c !sudo make install ]]
 
+-- UltiSnips Essentials
+vim.cmd [[ let g:UltiSnipsExpandTrigger="<tab>" ]]
+vim.cmd [[ let g:UltiSnipsJumpForwardTrigger="<tab>" ]]
+vim.cmd [[ let g:UltiSnipsJumpBackwardTrigger="<s-tab>" ]]
+
+-- To make UltiSnips work in VimWiki
+vim.cmd [[ let g:vimwiki_table_mappings=0 ]]
+
+-- PDF shortcut
+vim.cmd [[ nmap <leader>pdf :!pandoc % -f vimwiki -t pdf -so %.pdf && mv %.pdf ~/Downloads ]]
+
 -- Disable VimWiki tab / <S-tab>
 -- vim.cmd [[ au filetype vimwiki silent! iunmap <buffer> <Tab> ]]
 
