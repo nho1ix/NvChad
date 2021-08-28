@@ -80,7 +80,6 @@ return packer.startup(function()
       end,
    }
 
-   -- lsp stuff
    use {
       "nvim-treesitter/nvim-treesitter",
       event = "BufRead",
@@ -115,11 +114,16 @@ return packer.startup(function()
       end,
    }
 
+   -- lsp stuff
    use {
       "kabouzeid/nvim-lspinstall",
       opt = true,
       setup = function()
          require("core.utils").packer_lazy_load "nvim-lspinstall"
+         -- reload the current file so lsp actually starts for it
+         vim.defer_fn(function()
+            vim.cmd "silent! e %"
+         end, 0)
       end,
    }
 
@@ -162,15 +166,6 @@ return packer.startup(function()
    }
 
    use {
-      "onsails/lspkind-nvim",
-      disable = not plugin_status.lspkind,
-      after = "LuaSnip",
-      config = function()
-         require("plugins.configs.others").lspkind()
-      end,
-   }
-
-   use {
       "jdhao/better-escape.vim",
       disable = not plugin_status.esc_insertmode,
       event = "InsertEnter",
@@ -185,25 +180,25 @@ return packer.startup(function()
    -- load luasnips + cmp related in insert mode only
 
    use {
-      "L3MON4D3/LuaSnip",
+      "hrsh7th/nvim-cmp",
       event = "InsertEnter",
+      config = function()
+         require "plugins.configs.cmp"
+      end,
+   }
+
+   use {
+      "L3MON4D3/LuaSnip",
       wants = "friendly-snippets",
+      after = "nvim-cmp",
       config = function()
          require "plugins.configs.luasnip"
       end,
    }
 
    use {
-      "hrsh7th/nvim-cmp",
-      config = function()
-         require "plugins.configs.cmp"
-      end,
-      after = "lspkind-nvim",
-   }
-
-   use {
       "saadparwaiz1/cmp_luasnip",
-      after = "nvim-cmp",
+      after = "LuaSnip",
    }
 
    use {
