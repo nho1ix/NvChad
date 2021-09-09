@@ -31,10 +31,8 @@ vim.cmd [[ set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.s
 -- HTML shortcut
 vim.cmd [[ nmap <leader>tml :!pandoc % -f vimwiki -t html -so %.html && mv %.html ~/Downloads/gitpages/Blog_Posts/ ]]
 
-
 -- Open PDFs in Vim
 -- vim.cmd [[ au BufRead *.pdf !zathura % & ]]
-
 
 -- Disable VimWiki tab / <S-tab>
 -- vim.cmd [[ au filetype vimwiki silent! iunmap <buffer> <Tab> ]]
