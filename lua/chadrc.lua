@@ -48,7 +48,7 @@ M.options = {
    ignorecase = true,
    insert_nav = true, -- navigation in insertmode
    mapleader = " ",
-   mouse = "a",
+   mouse = "",
    number = true,
    -- relative numbers in normal mode tool at the bottom of options.lua
    numberwidth = 2,
@@ -80,7 +80,7 @@ M.plugin_status = {
    cheatsheet = true, -- fuzzy search your commands/keymappings
    colorizer = true,
    comment = true, -- universal commentor
-   dashboard = false, -- a nice looking dashboard
+   dashboard = true, -- a nice looking dashboard
    esc_insertmode = true, -- escape from insert mode using custom keys
    feline = true, -- statusline
    gitsigns = true, -- gitsigns in statusline
@@ -88,7 +88,7 @@ M.plugin_status = {
    neoformat = true, -- universal formatter
    neoscroll = true, -- smooth scroll
    telescope_media = false, -- see media files in telescope picker
-   truezen = false, -- no distraction mode for nvim
+   truezen = true, -- no distraction mode for nvim
    vim_fugitive = false, -- git in nvim
    vim_matchup = true, -- % magic, match it but improved
 }
@@ -140,8 +140,8 @@ M.mappings = {
 -- to get short info about a plugin, see the respective string in plugin_status, if not present, then info here
 M.mappings.plugin = {
    bufferline = {
-      next_buffer = "<TAB>", -- next buffer
-      prev_buffer = "<S-Tab>", -- previous buffer
+      next_buffer = "<leader><TAB>", -- next buffer
+      prev_buffer = "<leader><S-Tab>", -- previous buffer
       --better window movement
       moveLeft = "<C-h>",
       moveRight = "<C-l>",
