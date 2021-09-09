@@ -56,7 +56,19 @@ end
 M.colorizer = function()
    local present, colorizer = pcall(require, "colorizer")
    if present then
-      colorizer.setup()
+      colorizer.setup({ "*" }, {
+         RGB = true, -- #RGB hex codes
+         RRGGBB = true, -- #RRGGBB hex codes
+         names = false, -- "Name" codes like Blue
+         RRGGBBAA = false, -- #RRGGBBAA hex codes
+         rgb_fn = false, -- CSS rgb() and rgba() functions
+         hsl_fn = false, -- CSS hsl() and hsla() functions
+         css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+         css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+
+         -- Available modes: foreground, background
+         mode = "background", -- Set the display mode.
+      })
       vim.cmd "ColorizerReloadAllBuffers"
    end
 end
@@ -66,6 +78,19 @@ M.comment = function()
    if present then
       nvim_comment.setup()
    end
+end
+
+M.luasnip = function()
+   local present, luasnip = pcall(require, "luasnip")
+   if not present then
+      return
+   end
+
+   luasnip.config.set_config {
+      history = true,
+      updateevents = "TextChanged,TextChangedI",
+   }
+   require("luasnip/loaders/from_vscode").load()
 end
 
 M.lspkind = function()
