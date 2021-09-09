@@ -2,7 +2,7 @@
 -- if not present then
 --    return
 -- end
--- 
+--
 -- ts_config.setup {
 --    ensure_installed = {
 --       "lua",
